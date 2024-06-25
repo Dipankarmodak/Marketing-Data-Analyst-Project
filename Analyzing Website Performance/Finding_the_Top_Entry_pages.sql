@@ -8,8 +8,8 @@ group by p.website_session_id
  ;
 
  -- inner join with the original table and the temporary table , 
-SELECT COUNT(p.website_session_id),p.pageview_url 
-FROM first_pgv_per_session f JOIN website_pageviews p
-ON f.website_session_id=p.website_session_id
-GROUP BY p.pageview_url;
+ SELECT COUNT( f.website_session_id),p.pageview_url 
+ FROM first_pgv_per_session f LEFT JOIN website_pageviews p
+ ON f.first_pv=p.website_pageview_id
+ GROUP BY p.pageview_url;
  
