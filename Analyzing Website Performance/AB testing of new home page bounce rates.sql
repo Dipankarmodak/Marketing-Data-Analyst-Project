@@ -15,7 +15,7 @@
  ON w.website_session_id=p.website_session_id
  WHERE w.created_at BETWEEN '2012-06-19' AND '2012-07-28' AND p.website_pageview_id =23504 AND w.utm_source='gsearch' AND w.utm_campaign='nonbrand'
  GROUP BY p.website_session_id;
- drop table first_pageview_id_each_session
+ 
  
  -- Rest of the steps is same as before when calculating the bounce rates
  
