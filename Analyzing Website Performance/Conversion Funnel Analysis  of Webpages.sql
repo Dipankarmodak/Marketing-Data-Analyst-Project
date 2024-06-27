@@ -33,15 +33,15 @@ SELECT
     -- Calculate the click-through rate for landing on the products page
     SUM(CASE WHEN m.session_to_products = 1 THEN 1 ELSE 0 END) / COUNT(DISTINCT m.website_session_id) AS landerpage_clk_rate,
     -- Calculate the click-through rate for landing on the Mr. Fuzzy page
-    SUM(CASE WHEN m.to_mr_fuzzy = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.session_to_products = 1 THEN 1 ELSE 0 END) AS mrfuzzypage_clk_rate,
+    SUM(CASE WHEN m.to_mr_fuzzy = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.session_to_products = 1 THEN 1 ELSE 0 END) AS Pproduct_clk_rate,
     -- Calculate the click-through rate for landing on the cart page
-    SUM(CASE WHEN m.to_cart = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.to_mr_fuzzy = 1 THEN 1 ELSE 0 END) AS cartpage_clk_rate,
+    SUM(CASE WHEN m.to_cart = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.to_mr_fuzzy = 1 THEN 1 ELSE 0 END) AS mr_fuzzy_clk_rate,
     -- Calculate the click-through rate for landing on the shipping page
-    SUM(CASE WHEN m.to_shipping = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.to_cart = 1 THEN 1 ELSE 0 END) AS shippingpage_clk_rate,
+    SUM(CASE WHEN m.to_shipping = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.to_cart = 1 THEN 1 ELSE 0 END) AS cartpage_clk_rate,
     -- Calculate the click-through rate for landing on the billing page
-    SUM(CASE WHEN m.to_billing = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.to_shipping = 1 THEN 1 ELSE 0 END) AS billingpage_clk_rate,
+    SUM(CASE WHEN m.to_billing = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.to_shipping = 1 THEN 1 ELSE 0 END) AS shippingpage_clk_rate,
     -- Calculate the click-through rate for landing on the thank you page
-    SUM(CASE WHEN m.to_thanks = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.to_billing = 1 THEN 1 ELSE 0 END) AS thankspage_clk_rate
+    SUM(CASE WHEN m.to_thanks = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.to_billing = 1 THEN 1 ELSE 0 END) AS billingpage_clk_rate
 FROM (
     -- Subquery to get the maximum flag values for each session
     SELECT 
