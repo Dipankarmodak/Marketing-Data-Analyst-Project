@@ -33,7 +33,7 @@ SELECT
     -- Calculate the click-through rate for landing on the products page
     SUM(CASE WHEN m.session_to_products = 1 THEN 1 ELSE 0 END) / COUNT(DISTINCT m.website_session_id) AS landerpage_clk_rate,
     -- Calculate the click-through rate for landing on the Mr. Fuzzy page
-    SUM(CASE WHEN m.to_mr_fuzzy = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.session_to_products = 1 THEN 1 ELSE 0 END) AS Pproduct_clk_rate,
+    SUM(CASE WHEN m.to_mr_fuzzy = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.session_to_products = 1 THEN 1 ELSE 0 END) AS product_clk_rate,
     -- Calculate the click-through rate for landing on the cart page
     SUM(CASE WHEN m.to_cart = 1 THEN 1 ELSE 0 END) / SUM(CASE WHEN m.to_mr_fuzzy = 1 THEN 1 ELSE 0 END) AS mr_fuzzy_clk_rate,
     -- Calculate the click-through rate for landing on the shipping page
