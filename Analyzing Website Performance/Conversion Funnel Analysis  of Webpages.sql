@@ -57,3 +57,6 @@ FROM (
     GROUP BY 
         website_session_id
 ) AS m;
+
+--Display the clickthrough rate output per page
+SELECT * FROM session_level_clickthorough_rate;
