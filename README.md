@@ -3,4 +3,4 @@ Real World Marketing Ecommerce Data Analyst Project Using SQL
 
 Diagram of the Ecommerce Database
 
-![My Image Description](path/to/your/image.png)
+![My Image Description](Diagram1.png)
