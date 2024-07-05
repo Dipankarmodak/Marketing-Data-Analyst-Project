@@ -2,6 +2,7 @@
 Real World Marketing Ecommerce Data Analyst Project Using SQL Server Management Studio-
 
 Some Insights from the analysis:
+
 Traffic Source Analysis: 
 
 • Determined that desktop users have a 3.8 times higher conversion rate from web sessions to orders 
